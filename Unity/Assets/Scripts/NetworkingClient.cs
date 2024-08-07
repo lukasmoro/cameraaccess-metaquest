@@ -3,7 +3,7 @@
  * It allows the game object to connect to a TCP server, receive data asynchronously, 
  * and update the UI to reflect the connection status.
  * 
- * Key Features:
+ * Functionality:
  * - Connects to a specified TCP server using an IP address and port.
  * - Asynchronously reads incoming messages from the server.
  * - Notifies other components of received messages through events.
@@ -27,7 +27,6 @@ public class NetworkingClient : MonoBehaviour
     private NetworkStream networkStream;
     private bool attemptingConnection = false;
     private Coroutine readDataCoroutine;
-
     public delegate void MessageReceivedHandler(string message);
     public event MessageReceivedHandler OnMessageReceived;
     public delegate void DisconnectedHandler();
@@ -88,6 +87,18 @@ public class NetworkingClient : MonoBehaviour
         }
     }
 
+    public void UpdateHost(string newHost)
+    {
+        host = newHost;
+    }
+    private void UpdateConnectionStatus(bool isConnected)
+    {
+        if (connectionStatusImage != null)
+        {
+            connectionStatusImage.color = isConnected ? connectedColor : disconnectedColor;
+        }
+    }
+
     IEnumerator ReadDataAsync()
     {
         byte[] buffer = new byte[4096];
@@ -123,18 +134,5 @@ public class NetworkingClient : MonoBehaviour
     void OnApplicationQuit()
     {
         Disconnect();
-    }
-
-    public void UpdateHost(string newHost)
-    {
-        host = newHost;
-    }
-
-    private void UpdateConnectionStatus(bool isConnected)
-    {
-        if (connectionStatusImage != null)
-        {
-            connectionStatusImage.color = isConnected ? connectedColor : disconnectedColor;
-        }
     }
 }

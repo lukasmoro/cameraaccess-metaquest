@@ -12,7 +12,7 @@ For using this project the Unity application (client-side) needs to be connected
 
 ### Python on Windows
 0. Download and install Python [here](https://www.python.org/downloads/windows/)
-1. Open shell and navigate to the directory of the "PythonServer" folder: cd /path/to/your/directory/PythonServer
+1. Open shell and navigate to the directory of the "Python" folder: cd /path/to/your/directory/Python
 2. Create a virtual environment: python -m venv venv
 3. Activate the virtual environment using PowerShell: .\venv\Scripts\Activate.ps1
 4. Upgrade pip to the latest version: pip install --upgrade pip

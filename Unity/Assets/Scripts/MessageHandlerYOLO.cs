@@ -3,7 +3,7 @@
  * It listens for JSON-encoded messages containing detection data, parses the data, and updates the UI accordingly.
  * The script is intended for use in Unity projects where object detection and visualization on a canvas are required.
  *
- * Key Features:
+ * Functionality:
  * - Listens for detection messages from a NetworkingClient.
  * - Parses JSON messages into a list of detections.
  * - Dynamically updates the UI with bounding boxes and class names for detected objects.
@@ -58,7 +58,6 @@ public class MessageHandlerYOLO : MonoBehaviour
             Debug.LogError("Received an empty message.");
             return;
         }
-
         try
         {
             DetectionWrapper detectionWrapper = JsonUtility.FromJson<DetectionWrapper>(message);
