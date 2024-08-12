@@ -43,9 +43,11 @@ For using this project the Unity application (client-side) needs to be connected
 
 ### Unity
 0. Open the "Unity" folder with Unity Hub
-1. Open the scene ‘Camera Access YOLO’
-2. In the ‘NetworkingClient.cs’ script attached to the ‘Networking Client’ gameobject under ‘Host’ enter the IP address of the PC/Mac running the Python script in the inspector
-3. Build the scene for your Quest
+1. If prompted, restart the Editor to update OVRPlugin
+2. Switch platform to Android
+3. Open the scene ‘Camera Access YOLO’
+4. In the ‘NetworkingClient.cs’ script attached to the ‘Networking Client’ gameobject under ‘Host’ enter the IP address of the PC/Mac running the Python script in the inspector
+5. Build the scene for your Quest (Will take some time for first time building, but should be quick afterwards)
 
 ### APK
 0. Ensure the Python script is waiting for connection
